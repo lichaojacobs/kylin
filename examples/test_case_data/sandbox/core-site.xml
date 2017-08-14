@@ -133,7 +133,7 @@
 
     <property>
         <name>hadoop.security.key.provider.path</name>
-        <value></value>
+        <value>kms://http@sandbox.hortonworks.com:9292/kms</value>
     </property>
 
     <property>

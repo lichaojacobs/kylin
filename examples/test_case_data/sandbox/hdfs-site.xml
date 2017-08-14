@@ -122,7 +122,7 @@
 
     <property>
         <name>dfs.encryption.key.provider.uri</name>
-        <value></value>
+        <value>kms://http@sandbox.hortonworks.com:9292/kms</value>
     </property>
 
     <property>
