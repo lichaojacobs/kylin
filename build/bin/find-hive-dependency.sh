@@ -45,7 +45,7 @@ fi
 
 for data in ${arr[@]}
 do
-    result=`echo $data | grep -e 'hive-exec[a-z0-9A-Z\.-]*.jar'`
+    result=`echo $data | grep -e 'hive-exec.jar'`
     if [ $result ]
     then
         hive_exec_path=$data
