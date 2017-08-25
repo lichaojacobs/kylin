@@ -107,8 +107,9 @@ public class RestClient {
         String url = baseUrl + "/cache/" + entity + "/" + cacheKey + "/" + event;
         HttpPut request = new HttpPut(url);
 
+        HttpResponse response =null;
         try {
-            HttpResponse response = client.execute(request);
+            response = client.execute(request);
             String msg = EntityUtils.toString(response.getEntity());
 
             if (response.getStatusLine().getStatusCode() != 200)
@@ -116,6 +117,9 @@ public class RestClient {
         } catch (Exception ex) {
             throw new IOException(ex);
         } finally {
+            if(response!=null) {
+              EntityUtils.consume(response.getEntity());
+            }
             request.releaseConnection();
         }
     }
